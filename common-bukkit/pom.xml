@@ -14,6 +14,13 @@
 		</repository>
 	</repositories>
 	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>maxikg-repo</id>
+			<url>http://repo.maxikg.de/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>de.mccityville</groupId>
