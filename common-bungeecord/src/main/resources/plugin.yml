@@ -1,0 +1,4 @@
+name: 'MCCV Bungee Common'
+version: '${project.version}'
+author: 'maxikg'
+main: 'de.mccityville.common.bungee.CommonPlugin'
