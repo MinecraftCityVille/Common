@@ -25,11 +25,15 @@ public class ChunkBlockIteratorTest {
 	
 	@Test
 	public void testIncrementation() throws ReflectiveOperationException {
-		for (int i = 0; i < 16 * 16 * 256 - 1; i++)
+		int counter = 0;
+		while (iterator.hasNext()) {
 			incrementor.invoke(iterator);
+			counter++;
+		}
 		
 		Vector vec = (Vector) pointer.get(iterator);
 		
+		Assert.assertEquals(16 * 16 * 256 - 1, counter);
 		Assert.assertEquals(15, vec.getX(), 0);
 		Assert.assertEquals(255, vec.getY(), 0);
 		Assert.assertEquals(15, vec.getZ(), 0);

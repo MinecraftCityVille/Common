@@ -52,6 +52,7 @@ public class ChunkBlockIterator implements Iterator<Block> {
 			if (pointer.getBlockZ() < CHUNK_HORIZONTALSIZE - 1) {
 				pointer.add(INCREMENTOR_Z);
 			} else {
+				pointer.setZ(0);
 				if (pointer.getBlockY() < CHUNK_VERTICALSIZE - 1) {
 					pointer.add(INCREMENTOR_Y);
 				}
