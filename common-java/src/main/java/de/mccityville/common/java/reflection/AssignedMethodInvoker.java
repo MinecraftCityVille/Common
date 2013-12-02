@@ -18,6 +18,14 @@ public class AssignedMethodInvoker {
 		this.method = method;
 	}
 	
+	public Object getTarget() {
+		return target;
+	}
+	
+	public Method getMethod() {
+		return method;
+	}
+	
 	public Object invoke(Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		if (!method.isAccessible())
 			method.setAccessible(true);
