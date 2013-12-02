@@ -13,17 +13,21 @@ public final class ImmutableUtils {
 	public static <T> ImmutableList<T> immutableList(Collection<T> collection) {
 		ImmutableList.Builder<T> builder = ImmutableList.builder();
 		
-		if (collection.size() > 0)
-			builder.addAll(collection);
+		synchronized (collection) {
+			if (collection.size() > 0)
+				builder.addAll(collection);
+		}
 		
 		return builder.build();
 	}
 	
 	public static <T> ImmutableSet<T> immutableSet(Collection<T> collection) {
 		ImmutableSet.Builder<T> builder = ImmutableSet.builder();
-		
-		if (collection.size() > 0)
+
+		synchronized (collection) {
+			if (collection.size() > 0)
 			builder.addAll(collection);
+		}
 		
 		return builder.build();
 	}
@@ -31,8 +35,10 @@ public final class ImmutableUtils {
 	public static <K, V> ImmutableMap<K, V> immutableMap(Map<K, V> map) {
 		ImmutableMap.Builder<K, V> builder = ImmutableMap.builder();
 		
-		if (map.size() > 0)
-			builder.putAll(map);
+		synchronized (map) {
+			if (map.size() > 0)
+				builder.putAll(map);
+		}
 		
 		return builder.build();
 	}
@@ -40,8 +46,10 @@ public final class ImmutableUtils {
 	public static <K, V> ImmutableBiMap<K, V> immutableBiMap(Map<K, V> map) {
 		ImmutableBiMap.Builder<K, V> builder = ImmutableBiMap.builder();
 		
-		if (map.size() > 0)
-			builder.putAll(map);
+		synchronized (map) {
+			if (map.size() > 0)
+				builder.putAll(map);
+		}
 		
 		return builder.build();
 	}
