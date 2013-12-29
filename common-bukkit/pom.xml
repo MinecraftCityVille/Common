@@ -67,6 +67,7 @@
 							<artifactSet>
 								<includes>
 									<include>de.mccityville:common-java</include>
+									<include>org.apache.commons:commons-lang3</include>
 								</includes>
 							</artifactSet>
 						</configuration>
